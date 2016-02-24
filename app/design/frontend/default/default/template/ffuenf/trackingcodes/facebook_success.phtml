@@ -1,0 +1,45 @@
+<?php
+$lastorderid = Mage::getSingleton('checkout/session')->getLastOrderId();
+$_order = Mage::getModel('sales/order')->load($lastorderid);
+$totalamount = $_order->getData('base_subtotal_incl_tax');
+$netamount = $_order->getData('base_subtotal');
+$taxrate = $totalamount / $netamount;
+$totalAmt = 0;
+$i = 0;
+$maxI = count($_order->getAllVisibleItems());
+$rabatt = 0;
+$orderItemsIds = '';
+foreach ($_order->getAllVisibleItems() as $item) {
+    $productprice = Mage::helper('tax')->getPrice($item->getProduct(), $item->getProduct()->getFinalPrice(), true);
+    if ($item->getQtyOrdered() > 1) {
+        $multiplier = " X " . round($item->getQtyOrdered());
+    } else {
+        $multiplier = "";
+    }
+    $productpriceqty = round(($productprice * $item->getQtyOrdered()), 2);
+    $productStr = $item->getSku();
+    $totalAmt = $totalAmt + $productpriceqty;
+    $sku = $item->getSku();
+    if ($item->getProductType() == 'configurable') {
+        $sku = $item->getProduct()->getData('sku');
+    }
+    if ($i == $maxI-1) {
+        $orderItemsIds .= $sku;
+    } else {
+        $orderItemsIds .= $sku . ',';
+    }
+    $i++;
+}
+if ($_order->getDiscountAmount() != 0) {
+    $discountamount = $_order->getDiscountAmount() / $taxrate;
+    if ($discountamount > 0) {
+        $rabatt = -1 * ($discountamount);
+    } else {
+        $rabatt = $discountamount;
+    }
+}
+$fb_order_total = round(($totalAmt + $rabatt + $_order->getBaseShippingInclTax()), 2); # Gesamtsumme in Euro mit "." (Punkt) als Dezimaltrenner (Keine Waehrungsangaben!)
+?>
+<script>
+  fbq('track', 'Purchase', {content_type: 'product', content_ids: [<?php echo $orderItemsIds ?>], value: '<?php echo $fb_order_total ?>', currency: 'EUR', num_items: <?php echo $maxI; ?>});
+</script>

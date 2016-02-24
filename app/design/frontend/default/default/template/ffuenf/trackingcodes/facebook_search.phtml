@@ -1,0 +1,6 @@
+<?php
+$term = Mage::helper('catalogsearch')->getQueryText();
+?>
+<script>
+  fbq('track', 'Search', {search_string: "<?php echo $term; ?>"});
+</script>

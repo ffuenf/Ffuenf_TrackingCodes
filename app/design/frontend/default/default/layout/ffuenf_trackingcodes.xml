@@ -1,0 +1,27 @@
+<layout>
+    <default>
+        <reference name="before_body_end">
+            <block type="core/template" ifconfig="ffuenf_trackingcodes/facebook/enable_global" name="trackingFacebookGlobal" template="ffuenf/trackingcodes/facebook_global.phtml" />
+        </reference>
+    </default>
+    <checkout_onepage_success>
+        <reference name="before_body_end">
+            <block type="core/template" ifconfig="ffuenf_trackingcodes/facebook/enable_success" name="trackingFacebookSuccess" template="ffuenf/trackingcodes/facebook_success.phtml" />
+        </reference>
+    </checkout_onepage_success>
+    <checkout_cart_index>
+        <reference name="before_body_end">
+            <block type="core/template" ifconfig="ffuenf_trackingcodes/facebook/enable_cart" name="trackingFacebookCart" template="ffuenf/trackingcodes/facebook_cart.phtml" />
+        </reference>
+    </checkout_cart_index>
+    <onestepcheckout_index_index>
+        <reference name="before_body_end">
+            <block type="core/template" ifconfig="ffuenf_trackingcodes/facebook/enable_checkout" name="trackingFacebookCheckout" template="ffuenf/trackingcodes/facebook_checkout.phtml" />
+        </reference>
+    </onestepcheckout_index_index>
+    <catalogsearch_result_index>
+        <reference name="before_body_end">
+            <block type="core/template" ifconfig="ffuenf_trackingcodes/facebook/enable_search" name="trackingFacebookSearch" template="ffuenf/trackingcodes/facebook_search.phtml" />
+        </reference>
+    </catalogsearch_result_index>
+</layout>

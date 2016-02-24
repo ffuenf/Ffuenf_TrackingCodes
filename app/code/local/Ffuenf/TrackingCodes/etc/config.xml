@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Ffuenf_TrackingCodes extension
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the MIT License
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/mit-license.php
+ *
+ * @category   Ffuenf
+ *
+ * @author     Achim Rosenhagen <a.rosenhagen@ffuenf.de>
+ * @copyright  Copyright (c) 2016 ffuenf (http://www.ffuenf.de)
+ * @license    http://opensource.org/licenses/mit-license.php MIT License
+*/
+-->
+<config>
+    <modules>
+        <Ffuenf_TrackingCodes>
+            <version>2.0.0</version>
+        </Ffuenf_TrackingCodes>
+    </modules>
+    <global>
+        <helpers>
+            <ffuenf_trackingcodes>
+                <class>Ffuenf_TrackingCodes_Helper</class>
+            </ffuenf_trackingcodes>
+        </helpers>
+        <blocks>
+            <ffuenf_trackingcodes>
+                <class>Ffuenf_TrackingCodes_Block</class>
+            </ffuenf_trackingcodes>
+        </blocks>
+        <resources>
+            <ffuenf_trackingcodes_setup>
+                <setup>
+                    <module>Ffuenf_TrackingCodes</module>
+                </setup>
+            </ffuenf_trackingcodes_setup>
+        </resources>
+    </global>
+    <frontend>
+        <layout>
+            <updates>
+                <ffuenf_trackingcodes>
+                    <file>ffuenf_trackingcodes.xml</file>
+                </ffuenf_trackingcodes>
+            </updates>
+        </layout>
+    </frontend>
+    <default>
+        <ffuenf_trackingcodes>
+            <general>
+                <enable>1</enable>
+            </general>
+            <facebook>
+                <enable_global>1</enable_global>
+                <enable_search>1</enable_search>
+                <enable_cart>1</enable_cart>
+                <enable_checkout>1</enable_checkout>
+                <enable_success>1</enable_success>
+            </facebook>
+        </ffuenf_trackingcodes>
+    </default>
+    <uninstall>
+        <filename>uninstall.txt</filename>
+    </uninstall>
+    <phpunit>
+        <suite>
+            <modules>
+                <Ffuenf_TrackingCodes/>
+            </modules>
+        </suite>
+    </phpunit>
+</config>

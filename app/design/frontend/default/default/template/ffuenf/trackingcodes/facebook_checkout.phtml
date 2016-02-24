@@ -1,0 +1,25 @@
+<?php
+$_quote = Mage::getSingleton('checkout/session')->getQuote();
+$total = $_quote->getGrandTotal();
+$items = Mage::getSingleton('checkout/session')->getQuote()->getAllVisibleItems();
+$cartItemsIds = '';
+$maxI = Mage::getSingleton('checkout/session')->getQuote()->getItemsCount();
+$i = 0;
+foreach ($items as $item) {
+    $sku = $item->getSku();
+    if ($item->getProductType() == 'configurable') {
+        $sku = $item->getProduct()->getData('sku');
+    }
+    if ($i == $maxI-1) {
+        $cartItemsIds .= $sku;
+    } else {
+        $cartItemsIds .= $sku . ',';
+    }
+    $i++;
+}
+$fb_shoppingcart_product_ids = $cartItemsIds;
+$fb_quote_total = round(($total + $_quote->getBaseShippingInclTax()), 2);
+?>
+<script>
+  fbq('track', 'InitiateCheckout', {content_type: 'product', content_ids: [<?php echo $fb_shoppingcart_product_ids ?>], value: '<?php echo $fb_quote_total ?>', currency: 'EUR', num_items: <?php echo $maxI; ?>});
+</script>

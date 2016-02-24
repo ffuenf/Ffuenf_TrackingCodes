@@ -1,0 +1,5 @@
+app/code/local/Ffuenf/TrackingCodes                                 app/code/local/Ffuenf/TrackingCodes
+app/etc/modules/Ffuenf_TrackingCodes.xml                            app/etc/modules/Ffuenf_TrackingCodes.xml
+app/design/frontend/default/default/layout/ffuenf_trackingcodes.xml app/design/frontend/default/default/layout/ffuenf_trackingcodes.xml
+app/design/frontend/default/default/template/ffuenf/trackingcodes   app/design/frontend/default/default/template/ffuenf/trackingcodes
+app/etc/modules/Ffuenf_TrackingCodes.xml                            app/etc/modules/Ffuenf_TrackingCodes.xml
