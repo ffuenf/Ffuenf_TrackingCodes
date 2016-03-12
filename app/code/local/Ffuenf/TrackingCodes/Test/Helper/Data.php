@@ -25,7 +25,7 @@
 class Ffuenf_TrackingCodes_Test_Helper_Data extends EcomDev_PHPUnit_Test_Case
 {
     /**
-     * @var Ffuenf_DevTools_Test_Helper_Data
+     * @var Ffuenf_TrackingCodes_Test_Helper_Data
      */
     protected $_helper;
 
@@ -43,7 +43,7 @@ class Ffuenf_TrackingCodes_Test_Helper_Data extends EcomDev_PHPUnit_Test_Case
      * Tests whether extension is active.
      *
      * @test
-     * @covers Ffuenf_DevTools_Helper_Data::isExtensionActive
+     * @covers Ffuenf_TrackingCodes_Helper_Data::isExtensionActive
      */
     public function testIsExtensionActive()
     {
