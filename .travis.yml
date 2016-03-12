@@ -1,37 +1,41 @@
 language: php
 sudo: false
+cache:
+  apt: true
+  directories:
+  - "$HOME/.composer/cache"
+  - "$HOME/.cache/bin"
+  - "$HOME/.n98-magerun/modules"
+  - "$HOME/.cache/magento"
 php:
-- 5.4
 - 5.5
 - 5.6
 - 7.0
 matrix:
   fast_finish: true
   allow_failures:
-  - env: MAGENTO_VERSION=magento-ce-1.9.1.1
   - php: 5.6
-    env: MAGENTO_VERSION=magento-mirror-1.8.1.0
+    env: MAGENTO_VERSION=ce-1.8.1.0
   - php: 7.0
-    env: MAGENTO_VERSION=magento-mirror-1.8.1.0
+    env: MAGENTO_VERSION=ce-1.8.1.0
 env:
   global:
   - APPNAME=Ffuenf_TrackingCodes
-  - secure: Ifo9XW5/quMhzHnGCrEVrO9M/y8o+R+97XXSqUMegA6V91mLjt4g3Cv/aQy50Gu+LJhylk4/SgXi8H+iVEPQXh7vpx0OYpCiy0py1PBg53ZGNnrp3gLocOnFhWiJgRb1IXiJjZkztxHAr5Rmo1tkqDKd2sd7mgX8DDKK7cUUjNf/danYRuGCRlEL5cFgLZsZCZ1b2pnEb3dZZem4G+ZiCsUU0HiV+B+E9UNzkh5vTXWtqPB9iu92KgxKEmzIC3elL3ED629OTTmH0OUNTTW+Y7txbtCzoLv04I67t1rZSGbti+Xc7lHGVxusvRT9SxJcaoZUZmg6hdGqwpniuynuhr0eNID5pNfEoPWKfn5T8J6fImWhVWu54OKAT97Hh4YT83KzbXjvovsF4gfrCxUZnX7FJB7EBrLvc3EF8Zc2tit9/04Vgw7Lx1krtZcRIVZvh+LB+S9ja4Ncndv/4gpCWSq874bDFTgh68AdT+2DKTuKz/GNm6z5PK+fD+AKAaA8nS1iNbnKh8OmMVmCUyyJQAp1UiYcoyf2YrY+52C6XzgX+/bejPL/sHcSHh5K2aeiZirjk66Ok83kCLfepX8UuIvsJRfXtXW01Eanv0GXQtcsARADnbDhhMOIuIwGiXm40LORcz7sj5HvhifG8mbPPvOaSv8iEcrjbU0UlOm4UAs=
-  - secure: UUctSdAU07P7UnAcuCtbnDlvvC3QrBbiAQ/MRINZ3pgiRRJ6kWNH59q1enwS9gG6x5NuwCteMgUEfxm4w9jmO6RjakgdYModAUB/2Ho+5ALcWoJdmSZrk57p8YmYaNwWbMz/N8DegXIGNyu0rsRL8Fyi+Z5Qu0RNovKKzKY6eusK6Txbm7j/4h6P+yvflyI4ZaKAh67Tek0zI1Tq5ICMXoJ69x7Yj69NTA9jXvOe/SDewtieCjxArGLPCEUDD0wl14gccOLvDk0T2sIis1EPyLWEddK/LA7+ceHGZiPnSSJi0EdTS+90HkuBKbBFSxX24xuptGweJibDnBpXXwHCB7FJnZBg9aYGXqio3uer7gp0XLsnTT0B6tJwp6U2G6Sfrjb+y5MgxFVTuXbdZIBoO9U03USYapmNGLQjutFItWCBm3XO8XAT9zMOGU3yJiL5SIOvRjk18/jZS5U8RNCvnOxwb97a0Mdc+mVgVKSB0mtbN/Z9wN3sGtTsh7KBWRmLvnnjLDt0bWsnhaLOjeawL3W8ItEZyg1/CLFdtdPIfgadmVKOANacfwhbXDcH9LEp0/T6or46XLNvvDTntg+SxyAgBkVbDts15q6Bb4+AIASD7I/yDHNjzr2ixfu08gPMjz4jwYJvWhhFgfYjQZqJmMRAX3YC13d+OuDOWFh9RU8=
+  - secure: AfkwdM6V73vvA7XQbS7HkSmc1STFzz7HpDMWfrVaq2Uw8d5eH8hru2XV4rL+pDiSWJ3xjM0oTMxmOOObKZgRsmLLhGZS0WTTNexLVZv5RvNKmfgg4/rwNyKod6Ac8i5bvK/SySw2lkZqnZTCQNZTkm7QXZSXMCxMZLjj/B5iNMAaMhKaRcyf8pQHvkCvFa6Oa4PYd58QVa3gaM4QhR8Lr2AlH6hVZoMeCMe5OOXinPgo5LCxOs7Ih2BisOCzLFG24pFMjW02Jt1zn2YA28D/eopzspVT/oXv1kY2ODPNbGzB+YgwnsrHtVG6gfZG6o74pliupvyQEOvIh8G13cdGAYfLAQmNsX0AdoRyLGnDXz+s46pfUl9R3R6RN816wmIUcbJFtMYw7FTGK0IkPjc3uM+j2BykeMc+xoKv/ktMNOgmRT7UmbOPpQNAak5F73WYQCm0xM9ajY835ReYqVqqjrNFmdxzDUN13q7bkH1vuMMyUt0uIHTCp4lrJ3U/wdtNrvLKnpOPd1rku3Vc+JRP0LfHGxzvpk3ZUsT7sEwqsXpqk862uS9tSPWx2C2fo0ySeaCOmVcDH0MbmzGs618X7FF8+YXKVaxcRakJQCy8++adLhQ6mnZsiMX7FGL3yvpZn2dQm9O98um155zcGG1jksawOfbKvQAGUMn7kj7yZqE=
+  - secure: V9aedZ6sQeaCc/RdDrd+2xZuEbRtGDC8f/OZ3wWqD3rttjIF+y8+YuWCcxCh8dyIeE8hBQM9DVRS3hjCgB+vXoMlJbhfcWOKXfDFElq7dWMtphGl+/M543Ze+uzRgUpX04eZyt91VqlYcgRtrwSM1fjWcPYp9UkgQ1qtz99vRcM3WUabZJajRGLrIEtw5D7MbAgAkrmrhP0nbqgQReoKD3QveHmJcqq1fL/Ejd8EJiMwHEEQjKtdF7JjedEmCxBKxTXduPrcjqvDUY5D7+TJd5vtOIKzFeusMVLVPO8GM++ym5MfEbvhtXzN9iqPX1CF8RjGa1iREUM0SxQwMInY/OM8CskmiQ4sFvsmlCT/49SVrgMZOKxnG5j52bBmGo05nQw2z8CFCzu/4/b9Dzl4Jm5nJSl1K04NEklwGFXlWrE5F21UiXPPvXY48BMCrsYPpENRGmeVPGejWDsevJVCkoJ3wOvKabVwc57rLJEW6g2cVyKJyelHHC1K4rp9pXQ2/fUhEdpZwVrM6XU5AmoMsrPQSAn1o2Nv5VCADPfnI2CR8cb2I87J835LAtT1tjphCISu3cFo5DsAPEL7ckP1VvtUlmWnpxdzUXcmgigAk2Jo6jh2dUP49cF9FI2qvC8V2sLqm8vqQXREm/ROeyTIuJZSwCKAZUPhhBfTNLgWewg=
+  - secure: Jq5WUfkB6KgrLH1Gqlnevt2y6hXEUNN6L0qOKSB8bfAKD/jcGpMtz4HlJwSkVA28XkZdbFOrNknxZ7CCFRsXiYX0LSJcZ9R18KaMpdiUjGo7y0REkEjRr1ohFnkYv2ju8ZQAMuWoLs7z6aWvAfEVg4828UBaM3sci0fM33AFh/eImZRcqy9FnEP5dRXV8fBow2uvbG5032Jlc8ZOO1WcPxJxWV1vDwZUI0Vqxu5Klpsu3NEM3H0L+8JuKvHCe71IBiomE83+wXeAK+TT9CWu9JGXBUh+zf98CpdmrjZxZ6HasqO7cJ7nebEhzjuBiJsO57I01VEz6HB8NrkkrpKPhD+y3pg6GcrMVs0dDXd6qP2i11HW2kLkpLBnCTT3LjLNu6OQhqp2ZzmeiMqdA19gyuAofA9j8JP1XPAJQoRpGXFmlnwFF21cedtQvVmgUYjNhuF/Jxl+ZH05HbDP/8XyYIwjGIBX0UyAq0/bxd0tvZ/8/ylUXdzvyheo9nXut+JBvo/S7qlbCSie/KfIbIp3swzV9LzIZceFx1xZmqZec0JiAP4qlXZk98RDNBIxXS5be5Xbzkzv7jfIL3zDs5YEHu2L0UDNImm8T6O4WgBTxGJH0M2Ln8+Iv35KplyMKP9B9hojK42JB4Jw+58LZ9iJjiK4b9fiB/5eqUonXdcc0Ew=
   matrix:
-  - MAGENTO_VERSION=magento-ce-1.9.2.3
-  - MAGENTO_VERSION=magento-ce-1.9.1.1
-  - MAGENTO_VERSION=magento-mirror-1.8.1.0
-  - MAGENTO_VERSION=magento-mirror-1.7.0.2
-  - MAGENTO_VERSION=magento-mirror-1.6.2.0
-before_script:
-- composer self-update
-- composer install --prefer-source
-script:
-- curl -sSL https://raw.githubusercontent.com/ffuenf/MageTestStand/master/setup.sh
+  - MAGENTO_VERSION=ce-1.9.2.4
+  - MAGENTO_VERSION=ce-1.9.1.1
+  - MAGENTO_VERSION=ce-1.8.1.0
+  - MAGENTO_VERSION=ce-1.7.0.2
+  - MAGENTO_VERSION=ce-1.6.2.0
+before_install:
+- curl -sSL https://raw.githubusercontent.com/ffuenf/MageTestStand/master/before_install.sh
   | bash
-before_deploy:
-- gem install mime-types -v 2.6.2
+script:
+- curl -sSL https://raw.githubusercontent.com/ffuenf/MageTestStand/master/script.sh
+  | bash
 deploy:
   provider: releases
   file:
@@ -42,7 +46,7 @@ deploy:
     branch: master
     tags: true
   api_key:
-    secure: CJvXhYgV8oQaod8bRo4xamnRxrqDm3riH+y2x7II+QXVDOhmnqOmm5Ezm1DaXSRuvkHOtgx6PKBYrkXDeYgaLv057+QWPmZCg4gE48f+MTmn3LBrceBHvC6FPqdRdv5wFiTHGDLKwHN57MSyN+VznnIbrvnapD2SZtMzMJWP8TfjwCt1fLnDlYVoum2ttRfKWuP4z0DbdajkoIJQSXLAPu8PyI+wdgD5/vg3nLTmnwUWEgXK/UazGLmGui684Tfwh/e5nO5WPOh9bLU26w0AxQhxrOCeJCeVSUlBmtjwFKl0FXpsaqMxM0TJdOG+Hsima8YgdQp4g2bZvyCLFMBzy10SkWLcj0nt6SnCmf2ieV1MO02KDQail8CmqM1aeuHgxJuaD2skZ1TrqQWHzKE4A0wKXv8OG6sWr373/m5h/AVel9CPDWqUXK5dIGaaWUnP+cxewvfkI/zYyBJ7FAeNTLdZMPeuiELGe3J2VWZN8mCHgPhHp85faqSpsT1ziC0Lg1LQcgVooGlZX5XSvOV67EXL2oPiHTg0OuUa5Pz39z01DFVT9WhU/gWdspC6yCasU7i/iA04FeKPEVz5Dp2TFlu5mn//Zoh3OJZREePBVKvn06NUhsdVaQ1TfGhk+mzImdxjog/uU3ECdV5WxwJcSjWd+y/ZRSD7HPDtI2SBP6Q=
+    secure: a+tpAeXKrTGx+VKzUhJeatzD0ouKhNBfbH4HCX3EujbZ7a0PFQgYvz/cjHj7KqUNLN92aqG1SJIW8ZpGkJNCrAe7qcfcPc/iMGuihvwdlIH4U+uLdUqgq5MACW/7DsfxET/cUYHv3MX4V9svwimdgnKZk08hcP/1vZ+6ITJC8zKWls2U1Cwy9ZNzZLUydn56tWXLtn3HshIH/USD4Eb8iNmEs9ss8KjnS603HdZPP3cIiJznwynlYl/+NTCgMhKpEx5UwBR7OZ+cOxHKdN8wDo9mGlUA3h7HxH3k6ElOPtkk/mFxEV37tlWi280jtEuDw3gn3Dd13YAiD0iYsn57a1QHXke8J07LbCfsiwHQS7QVz+i6hBkXWRtjMByvZe/T6oUUspTrBdAWHA+EAglTzTc09G5eED6Mz39u4SNUOoH+T1kzwC0cDfnAKSLGDpx38+yFBk25cX9Oq5O2BHGGIXU3VRDkHJbJVf80j4/YSURCQf/YOTvToRqcx/0yafr3x8/CbLLvM34u7+py1vlzGCrYXIHCZdWND1oP5rCybAYlBxLfVCd3ZlTg1+xsjsJ3pkW5G5xzqoNW2I/0j6m0IXEKyReM91jQlCHJzeNpgOeBZpiRUUn8QwmGOBAvVfTdrAzFUVhN+2WXhNReyFfBal96CynOYnVnxPOFXotLzSY=
 notifications:
   slack:
-    secure: MI3JBe+8fYqbSoTil3gNJlPZd9U6BVFW/jCBGxxjYlxnoAmhE58+UnNM1Tz0C+TvrBjy7O5lMb6Hzrl+iS5TiPtym9Cgdysv/57g7sIsYXh5RtO03XftJmsygTsC/WiH2NONVLSnQI3uSWgQTR+h1L3x0emMcXH6HzgyGwL08tgPOB2Sw6yxQq7vNVZ71rzYeU0s7Sqt4J+iTpjskDHQIaAbcGeFEP8k+3/HZ3W55D2TFVw2PNrOcBQaqtoLiMrhmj1EpPD+uc/axMxPWtJI3Ukj4uGZYPn0lc15hvbKriUWHmXRF/YsGWKwh7cchVPYs4h1NyD48eYe37PBTiYthUdRIydz92kjk5iPpO4g368wpdqWJWwFFS1F7icGiICNd34LjQgMCSownZ6rAAIh9xbyhD1ZG/mRxUQxiygz1GmMaSjioyrSIaOjAEQS1Oir+OrAODjOBnWpB6W2dR4qQTkOgnz+Qn9IFvTGME7T4up+/H/h0tU9yiF3bcCQrT0gd55FyZProzCcGTVdYIa62kJaiEoyXfrktVx7HM5UKmo/gvLZOG2QKpm2D/mgua7FqkNQyyKHlhaQKKUd3uf2KgHcPK1KQyu/nkQWUvdfO5na53xhcDs39aWBegWgw9lceVcSCO5bLS+A1Ko5KosEzCdMoqpP197ajqvTnE/8Tmw=
+    secure: j3fEDsh9Hwf/XorDDyTbWs5immH86TJ6HB9eIME5pKexMFao2vPlQ4SjNpaQLCa/sxS9d5I6yNKdU6qpSVOhngogZZLZOPFoIgtuK9Sg/AlIck1C5D4S0C0n0CBVR+xJBJILT8qFeT9TTnQNFNQail4geFULAVt8fujn+jUAa9xVKWjzgZDMVfdKyqLwALYfoI3ZCgaxGF1KS8x02k6c2MxXkFpFm0ARptqkiSYegofEU+6dnB+g+U+v4K4A8goCvhP561dYNSB51O4pvbTQAhc4B/P3dr50QvrrPW/MhT7BIt2qe2WdlwVA8mq3CdAVwI7F6FuORUkfkJIT1XOkNqz9J8/D6aDlrcB4SV/3+0FAJObs8ipB9JyxkyC0jRIoGdGi7z1LJzKNXIzJt+w+AY3EEA2obM0c0gcME2vTV6VwA2BZUr9X/guNbI/gyo2LXnPFJ+P5dfonO1z1dj86yAjJyEZ1BvItQtvurxIpOnhhd82p0HtDdo31FVIAxZkaNKFLzM92N+fnlNFIII6NGPr0EkwIg2tjsQZr2WLe/mXxXJe6qD7bt3H7ZMO9y8o7iCyTHRVezoYpGWM8r2A3RMqEct71K6ZSEMRO73OCGhfvxny2yU9I7F/95WoU5Uwnwb/YbFZkQz54fs42yLjguUzZ1U50kuaUWUUEqN+R9EY=

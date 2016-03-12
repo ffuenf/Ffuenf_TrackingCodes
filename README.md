@@ -6,13 +6,11 @@ Ffuenf_TrackingCodes
 [![Build Status](https://img.shields.io/travis/ffuenf/Ffuenf_TrackingCodes.svg)][travis]
 [![Code Quality](https://scrutinizer-ci.com/g/ffuenf/Ffuenf_TrackingCodes/badges/quality-score.png)][code_quality]
 [![Code Coverage](https://scrutinizer-ci.com/g/ffuenf/Ffuenf_TrackingCodes/badges/coverage.png)][code_coverage]
-[![Code Climate](https://codeclimate.com/github/ffuenf/Ffuenf_TrackingCodes/badges/gpa.svg)][codeclimate_gpa]
 [![PayPal Donate](https://img.shields.io/badge/paypal-donate-blue.svg)][paypal_donate]
 [tag]: https://github.com/ffuenf/Ffuenf_TrackingCodes
 [travis]: https://travis-ci.org/ffuenf/Ffuenf_TrackingCodes
 [code_quality]: https://scrutinizer-ci.com/g/ffuenf/Ffuenf_TrackingCodes
 [code_coverage]: https://scrutinizer-ci.com/g/ffuenf/Ffuenf_TrackingCodes
-[codeclimate_gpa]: https://codeclimate.com/github/ffuenf/Ffuenf_TrackingCodes
 [paypal_donate]: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=J2PQS2WLT2Y8W&item_name=Magento%20Extension%3a%20Ffuenf_TrackingCodes&item_number=Ffuenf_TrackingCodes&currency_code=EUR
 
 This is a extension for Magento Community Edition that allows to integrate tracking codes of 3rd party services easily.
@@ -22,7 +20,7 @@ Platform
 
 The following versions are supported and tested:
 
-* Magento Community Edition 1.9.2.3
+* Magento Community Edition 1.9.2.4
 * Magento Community Edition 1.9.1.1
 * Magento Community Edition 1.8.1.0
 * Magento Community Edition 1.7.0.2
@@ -33,10 +31,10 @@ Other versions are assumed to work.
 Requirements
 ------------
 
-|                                                                     | PHP 5.4        | PHP 5.5           | PHP 5.6           | PHP 7.0           |
-| ------------------------------------------------------------------- | -------------- | ----------------- | ----------------- | ----------------- |
-| [EOL](https://secure.php.net/supported-versions.php) / STABLE / RC  | EOL            | STABLE            | **STABLE**        | **STABLE**        |
-| automated tests on [travis]                                         | allow failure  | **required pass** | **required pass** | **required pass** |
+|                                                                     | PHP 5.5           | PHP 5.6           | PHP 7.0           |
+| ------------------------------------------------------------------- | ----------------- | ----------------- | ----------------- |
+| [EOL](https://secure.php.net/supported-versions.php) / STABLE / RC  | STABLE            | **STABLE**        | **STABLE**        |
+| automated tests on [travis]                                         | **required pass** | **required pass** | **required pass** |
 
 Magento Community Edition officially supports PHP 5.4 and PHP 5.5.
 
@@ -50,16 +48,16 @@ Use [modman](https://github.com/colinmollenhour/modman) to install:
 ```
 modman init
 modman clone https://github.com/ffuenf/Ffuenf_Common
-modman clone https://github.com/ffuenf/Ffuenf_Pagespeed
+modman clone https://github.com/ffuenf/Ffuenf_TrackingCodes
 ```
 
 Deinstallation
 --------------
 
-#### via [MageTrashApp](https://github.com/magento-hackathon/MageTrashApp)
+#### via [Ffuenf_MageTrashApp](https://github.com/ffuenf/Ffuenf_MageTrashApp)
 
-An additional module called [MageTrashApp](https://github.com/magento-hackathon/MageTrashApp) has been installed to help you to uninstall this extension in a clean way.
-If it is not yet installed, please install it from [MageTrashApp](https://github.com/magento-hackathon/MageTrashApp)
+An additional module called [Ffuenf_MageTrashApp](https://github.com/ffuenf/Ffuenf_MageTrashApp) has been installed to help you to uninstall this extension in a clean way.
+If it is not yet installed, please install it from [Ffuenf_MageTrashApp](https://github.com/ffuenf/Ffuenf_MageTrashApp)
 If it is installed, go to your backend menu System > Configuration > Advanced > MageTrashApp, then click on the tab "Extension Installed", select the drop down option "Uninstall" of this extension and press "Save Config" button to uninstall
 If you use this extension, you don't need to make any queries in your database as explained below in case of manually uninstallation.
 
